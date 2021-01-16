@@ -9,15 +9,15 @@ from termcolor import colored, cprint
 # https://www.selenium.dev/selenium/docs/api/py/index.html
 # https://www.javatpoint.com/selenium-python
 
+
+
 def loginSmartControlUserTestCase(Username, Password):
     
-    global driver
-
     try:
-        
+        global driver
         # To download ChromeDriver automaticly
-        #driver = webdriver.Chrome(ChromeDriverManager().install())
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(ChromeDriverManager().install())
+        #driver = webdriver.Chrome()
 
         #navigate to the url  
         driver.get("http://smartcontrol.mitechnologiesinc.com/")  
@@ -49,8 +49,28 @@ def loginSmartControlUserTestCase(Username, Password):
         pass   
     pass
 
+def SearchInGoogleTestCase(TextToSearch):
+
+    try:
+        global driver
+        driver = webdriver.Chrome(ChromeDriverManager().install())
+        driver.get("https://www.google.com.mx/")  
+        
+        driver.find_element_by_name("q").send_keys(TextToSearch)
+
+        driver.find_element_by_name("btnK").send_keys(Keys.ENTER)  
+
+        pass
+    except : #Catch All Errors
+        ErrorCatched = sys.exc_info()[0]
+        print(ErrorCatched)
+        pass
+
+    pass
+
 def  main():
-    loginSmartControlUserTestCase ("user.name", "password")
+    #loginSmartControlUserTestCase ("user.name", "password")
+    SearchInGoogleTestCase("Javapoint")
     pass
 
 if __name__ == "__main__":

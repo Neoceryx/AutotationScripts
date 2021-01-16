@@ -7,6 +7,7 @@ from termcolor import colored, cprint
 
 # https://stackoverflow.com/questions/29858752/error-message-chromedriver-executable-needs-to-be-available-in-the-path
 # https://www.selenium.dev/selenium/docs/api/py/index.html
+# https://www.javatpoint.com/selenium-python
 
 def loginSmartControlUserTestCase(Username, Password):
     

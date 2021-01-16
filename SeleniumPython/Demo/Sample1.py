@@ -1,5 +1,6 @@
 import time  
 import sys
+import pathlib
 from selenium import webdriver  
 from selenium.webdriver.common.keys import Keys  
 from webdriver_manager.chrome import ChromeDriverManager
@@ -16,8 +17,8 @@ def loginSmartControlUserTestCase(Username, Password):
     try:
         global driver
         # To download ChromeDriver automaticly
-        driver = webdriver.Chrome(ChromeDriverManager().install())
-        #driver = webdriver.Chrome()
+        #driver = webdriver.Chrome(ChromeDriverManager().install())
+        driver = webdriver.Chrome()
 
         #navigate to the url  
         driver.get("http://smartcontrol.mitechnologiesinc.com/")  
@@ -49,11 +50,12 @@ def loginSmartControlUserTestCase(Username, Password):
         pass   
     pass
 
-def SearchInGoogleTestCase(TextToSearch):
+def SearchInGoogleTestCase(TextToSearch,):
 
     try:
         global driver
-        driver = webdriver.Chrome(ChromeDriverManager().install())
+        #driver = webdriver.Chrome(ChromeDriverManager().install())
+        driver = webdriver.Chrome(r"C:\Users\Daniel\Documents\PythonPersonalTests\AutotationScripts\SeleniumPython\chromedriver.exe")
         driver.get("https://www.google.com.mx/")  
         
         driver.find_element_by_name("q").send_keys(TextToSearch)

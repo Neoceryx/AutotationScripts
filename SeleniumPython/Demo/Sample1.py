@@ -59,6 +59,7 @@ def SearchInGoogleTestCase(TextToSearch,):
         driver.get("https://www.google.com.mx/")  
         
         driver.find_element_by_name("q").send_keys(TextToSearch)
+        time.sleep(1)
 
         driver.find_element_by_name("btnK").send_keys(Keys.ENTER)  
 
